@@ -1,49 +1,184 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="relative h-[85vh] md:min-h-screen flex items-center overflow-hidden">
+
+    <!-- Background Image -->
+    <img src="/static/images/hero.png"
+         alt="Driving Coach"
+         class="absolute inset-0 w-full h-full object-cover object-center md:object-center">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r 
+                from-black via-black/80 to-black/40">
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-8">
+        <div class="max-w-2xl">
+
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                Drive Without Fear.
+                <br>
+                <span class="text-[#FF2E88]">
+                    Build Real Road Confidence.
+                </span>
+            </h1>
+
+            <p class="mt-6 text-lg text-gray-300">
+                Personalized driving coaching in Kochi for confidence and safety.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+                <a href="https://wa.me/919947444475?text=Hi%20I%20want%20to%20book%20a%20driving%20session"
+                   target="_blank"
+                   class="bg-[#D4AF37] text-black px-8 py-3 rounded-full font-semibold hover:opacity-90 transition duration-300 shadow-lg">
+                    Book a Session
+                </a>
+
+                <a href="https://wa.me/919947444475"
+                   target="_blank"
+                   class="border border-[#FF2E88] text-[#FF2E88] px-8 py-3 rounded-full font-semibold hover:bg-[#FF2E88] hover:text-white transition duration-300">
+                    WhatsApp Now
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- TRUST STRIP -->
+<section class="bg-black border-t border-[#D4AF37]/20 py-8">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
+                62+
+            </h3>
+            <p class="text-gray-400 mt-2">Google Reviews</p>
+        </div>
+
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
+                200+
+            </h3>
+            <p class="text-gray-400 mt-2">Drivers Trained</p>
+        </div>
+
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
+                5+
+            </h3>
+            <p class="text-gray-400 mt-2">Years Experience</p>
+        </div>
+
+        <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
+                100%
+            </h3>
+            <p class="text-gray-400 mt-2">First Attempt Success</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- REVIEWS SECTION -->
+<section class="bg-[#0B0B0F] py-20">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold">
+            What <span class="text-[#FF2E88]">Our Students Say</span>
+        </h2>
+        <p class="text-gray-400 mt-3">Real Google Reviews</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
+            <div class="text-[#D4AF37] font-semibold mb-2">★★★★★</div>
+            <p>I had lost confidence after years of not driving. Yaseen sir’s calm training rebuilt my confidence step by step.</p>
+            <span class="text-sm text-gray-400">— Tabassum Unnisa</span>
+        </div>
+
+        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
+            <div class="text-[#D4AF37] font-semibold mb-2">★★★★★</div>
+            <p>Learning with Yaseen was a fantastic experience. His patience built real road confidence.</p>
+            <span class="text-sm text-gray-400">— Renju Raghav</span>
+        </div>
+
+        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
+            <div class="text-[#D4AF37] font-semibold mb-2">★★★★★</div>
+            <p>Perfect balance of theory and practice. Now I drive comfortably even in traffic.</p>
+            <span class="text-sm text-gray-400">— Saranya Sekharan</span>
+        </div>
+
+    </div>
+</section>
+
 <!-- CHATBOT SECTION -->
 <section class="bg-black py-16 border-t border-[#D4AF37]/20">
     <div class="max-w-3xl mx-auto px-6 text-center">
+
         <h2 class="text-3xl font-bold mb-6">
             Ask <span class="text-[#FF2E88]">GoodDrive AI</span>
         </h2>
 
         <div class="bg-[#111] p-6 rounded-xl shadow-lg">
-            <div id="chat-box" class="text-left h-64 overflow-y-auto mb-4 text-gray-300"></div>
+
+            <div id="chat-box"
+                class="h-64 overflow-y-auto text-left text-gray-300 mb-4 space-y-2">
+            </div>
 
             <input type="text"
-                   id="user-input"
-                   placeholder="Ask about driving lessons..."
-                   class="w-full p-3 rounded-lg bg-[#1a1a1a] text-white border border-gray-700">
+                id="user-input"
+                placeholder="Ask about pricing, location, booking..."
+                class="w-full p-3 rounded-lg bg-[#1a1a1a] text-white border border-gray-700">
 
             <button onclick="sendMessage()"
-                    class="mt-4 bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold">
+                class="mt-4 bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold hover:opacity-90">
                 Send
             </button>
+
         </div>
+
     </div>
 </section>
 
+<!-- CHATBOT SCRIPT -->
 <script>
 function sendMessage() {
     let input = document.getElementById("user-input").value.toLowerCase();
     let chatBox = document.getElementById("chat-box");
 
+    if (!input.trim()) return;
+
     let response = "";
 
-    if (input.includes("price") || input.includes("cost")) {
-        response = "Our driving sessions start at ₹___ per session.";
+    if (input.includes("price") || input.includes("cost") || input.includes("fee")) {
+        response = "Our sessions start at ₹___ per class. Contact us on WhatsApp for full details.";
     } 
-    else if (input.includes("location")) {
-        response = "We provide coaching in Kochi.";
+    else if (input.includes("location") || input.includes("where")) {
+        response = "We provide personalized driving coaching in Kochi.";
     } 
-    else if (input.includes("book")) {
-        response = "Click the Book Session button above to schedule.";
-    } 
+    else if (input.includes("book") || input.includes("schedule")) {
+        response = "Click the Book a Session button above to schedule instantly.";
+    }
+    else if (input.includes("time") || input.includes("hours")) {
+        response = "We offer flexible timing based on your availability.";
+    }
     else {
-        response = "Please contact us on WhatsApp for more details.";
+        response = "Please contact us directly on WhatsApp for detailed assistance.";
     }
 
-    chatBox.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
-    chatBox.innerHTML += "<p class='text-[#FF2E88]'><strong>AI:</strong> " + response + "</p>";
+    chatBox.innerHTML += `<div><strong>You:</strong> ${input}</div>`;
+    chatBox.innerHTML += `<div class="text-[#FF2E88]"><strong>AI:</strong> ${response}</div>`;
 
     document.getElementById("user-input").value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 </script>
+
+{% endblock %}
