@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Drive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS (if needed) -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body class="bg-[#0B0B0F] text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 
+                bg-black/70 backdrop-blur-md 
+                border-b border-[#D4AF37]/20">
+
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="/static/images/logo.png" 
+                     alt="Good Drive Logo" 
+                     class="h-12 w-auto object-contain">
+            </div>
+
+            <!-- Book Button (WhatsApp Direct) -->
+            <a href="https://wa.me/919XXXXXXXXX?text=Hi%20I%20want%20to%20book%20a%20driving%20session"
+               target="_blank"
+               class="bg-[#FF2E88] hover:bg-pink-600 text-white px-7 py-2.5 rounded-full font-semibold shadow-lg transition duration-300">
+                Book Now
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="pt-24">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

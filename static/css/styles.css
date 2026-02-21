@@ -1,0 +1,76 @@
+/* ============================= */
+/* Horizontal Scroll Animation  */
+/* ============================= */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+
+/* ============================= */
+/* Review Card Styling          */
+/* ============================= */
+
+.review-card {
+  flex: 0 0 280px;
+  max-width: 280px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+.review-card p {
+  color: #ccc;
+  margin-top: 12px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.review-card span {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+/* ============================= */
+/* Smooth Scroll for Page       */
+/* ============================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================= */
+/* Scrollbar Styling (Optional) */
+/* ============================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+}
