@@ -2,17 +2,16 @@
 {% block content %}
 
 <!-- HERO SECTION -->
-<section class="relative h-[85vh] md:min-h-screen flex items-center overflow-hidden">
+<section class="relative h-[80vh] md:min-h-screen flex items-center overflow-hidden">
 
     <!-- Background Image -->
     <img src="/static/images/hero.png"
-     alt="Driving Coach"
-     class="absolute inset-0 w-full h-full object-cover object-[65%_center] md:object-center">
+         alt="Driving Coach"
+         class="absolute inset-0 w-full h-full object-cover object-[72%_center] md:object-center">
 
     <!-- Overlay -->
     <div class="absolute inset-0 bg-gradient-to-r 
-                from-black via-black/80 to-black/40">
-    </div>
+                from-black via-black/80 to-black/40"></div>
 
     <!-- Hero Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-8">
@@ -27,7 +26,7 @@
             </h1>
 
             <p class="mt-6 text-lg text-gray-300">
-                Personalized driving coaching in Kochi for confidence and safety.
+                Personalized driving coaching by Instructor <strong>Yaseen</strong> in Kochi.
             </p>
 
             <div class="mt-8 flex flex-wrap gap-4">
@@ -48,73 +47,27 @@
 
         </div>
     </div>
-
 </section>
 
 <!-- TRUST STRIP -->
 <section class="bg-black border-t border-[#D4AF37]/20 py-8">
     <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
         <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                62+
-            </h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">62+</h3>
             <p class="text-gray-400 mt-2">Google Reviews</p>
         </div>
-
         <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                200+
-            </h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">200+</h3>
             <p class="text-gray-400 mt-2">Drivers Trained</p>
         </div>
-
         <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                5+
-            </h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">5+</h3>
             <p class="text-gray-400 mt-2">Years Experience</p>
         </div>
-
         <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                100%
-            </h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">100%</h3>
             <p class="text-gray-400 mt-2">First Attempt Success</p>
         </div>
-
-    </div>
-</section>
-
-<!-- REVIEWS SECTION -->
-<section class="bg-[#0B0B0F] py-20">
-    <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold">
-            What <span class="text-[#FF2E88]">Our Students Say</span>
-        </h2>
-        <p class="text-gray-400 mt-3">Real Google Reviews</p>
-    </div>
-
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-
-        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
-            <div class="text-[#D4AF37] font-semibold mb-2">★★★★★</div>
-            <p>I had lost confidence after years of not driving. Yaseen sir’s calm training rebuilt my confidence step by step.</p>
-            <span class="text-sm text-gray-400">— Tabassum Unnisa</span>
-        </div>
-
-        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
-            <div class="text-[#D4AF37] font-semibold mb-2">★★★★★</div>
-            <p>Learning with Yaseen was a fantastic experience. His patience built real road confidence.</p>
-            <span class="text-sm text-gray-400">— Renju Raghav</span>
-        </div>
-
-        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
-            <div class="text-[#D4AF37] font-semibold mb-2">★★★★★</div>
-            <p>Perfect balance of theory and practice. Now I drive comfortably even in traffic.</p>
-            <span class="text-sm text-gray-400">— Saranya Sekharan</span>
-        </div>
-
     </div>
 </section>
 
@@ -129,28 +82,35 @@
         <div class="bg-[#111] p-6 rounded-xl shadow-lg">
 
             <div id="chat-box"
-                class="h-64 overflow-y-auto text-left text-gray-300 mb-4 space-y-2">
-            </div>
+                 class="h-64 overflow-y-auto text-left text-gray-300 mb-4 space-y-2"></div>
 
             <input type="text"
-                id="user-input"
-                placeholder="Ask about pricing, location, booking..."
-                class="w-full p-3 rounded-lg bg-[#1a1a1a] text-white border border-gray-700">
+                   id="user-input"
+                   placeholder="Ask about price, location, instructor..."
+                   class="w-full p-3 rounded-lg bg-[#1a1a1a] text-white border border-gray-700">
 
             <button onclick="sendMessage()"
-                class="mt-4 bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold hover:opacity-90">
+                    class="mt-4 bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold hover:opacity-90">
                 Send
             </button>
 
-        </div>
+            <!-- WhatsApp fallback -->
+            <a href="https://wa.me/919947444475"
+               target="_blank"
+               class="block mt-4 text-[#FF2E88] underline">
+               Can't find answer? Chat on WhatsApp
+            </a>
 
+        </div>
     </div>
 </section>
 
 <!-- CHATBOT SCRIPT -->
 <script>
+
 function sendMessage() {
-    let input = document.getElementById("user-input").value.toLowerCase();
+    let inputField = document.getElementById("user-input");
+    let input = inputField.value.toLowerCase();
     let chatBox = document.getElementById("chat-box");
 
     if (!input.trim()) return;
@@ -158,27 +118,38 @@ function sendMessage() {
     let response = "";
 
     if (input.includes("price") || input.includes("cost") || input.includes("fee")) {
-        response = "Our sessions start at ₹ 600/hr . Contact us on WhatsApp for full details.";
-    } 
-    else if (input.includes("location") || input.includes("where")) {
-        response = "We provide personalized driving coaching in Kochi.";
-    } 
-    else if (input.includes("book") || input.includes("schedule")) {
-        response = "Click the Book a Session button above to schedule instantly.";
+        response = "Pricing: ₹600 per hour OR ₹15000 per month package.";
     }
-    else if (input.includes("time") || input.includes("hours")) {
-        response = "We offer flexible timing based on your availability.";
+    else if (input.includes("address") || input.includes("location") || input.includes("where")) {
+        response = "Address: Karimakkad, Thrikkakara, Edappally, Ernakulam, Kochi, Kerala 682021.";
+    }
+    else if (input.includes("instructor") || input.includes("who")) {
+        response = "Your instructor is Yaseen – 5+ years experience, 200+ drivers trained.";
+    }
+    else if (input.includes("book") || input.includes("schedule")) {
+        response = "Click the Book a Session button above to book instantly.";
     }
     else {
-        response = "Please contact us directly on WhatsApp for detailed assistance.";
+        response = "Please click the WhatsApp link below for more details.";
     }
 
     chatBox.innerHTML += `<div><strong>You:</strong> ${input}</div>`;
     chatBox.innerHTML += `<div class="text-[#FF2E88]"><strong>AI:</strong> ${response}</div>`;
 
-    document.getElementById("user-input").value = "";
+    inputField.value = "";
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+// ENTER KEY SUPPORT
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("user-input").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            sendMessage();
+        }
+    });
+});
+
 </script>
 
 {% endblock %}
