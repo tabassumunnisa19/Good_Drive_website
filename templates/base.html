@@ -8,7 +8,7 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS (if needed) -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
@@ -28,7 +28,7 @@
                      class="h-12 w-auto object-contain">
             </div>
 
-            <!-- Book Button (WhatsApp Direct) -->
+            <!-- Book Button -->
             <a href="https://wa.me/919XXXXXXXXX?text=Hi%20I%20want%20to%20book%20a%20driving%20session"
                target="_blank"
                class="bg-[#FF2E88] hover:bg-pink-600 text-white px-7 py-2.5 rounded-full font-semibold shadow-lg transition duration-300">
@@ -42,6 +42,82 @@
     <div class="pt-24">
         {% block content %}{% endblock %}
     </div>
+
+    <!-- ================= CHATBOT ================= -->
+
+    <div id="chatbot-container" class="fixed bottom-6 right-6 z-50">
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()"
+            class="bg-[#FF2E88] w-16 h-16 rounded-full shadow-xl text-white text-2xl flex items-center justify-center">
+            💬
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window"
+            class="hidden mt-4 w-80 bg-[#111] rounded-xl shadow-2xl p-4 border border-[#D4AF37]/20">
+
+            <h3 class="text-center font-semibold text-[#D4AF37] mb-2">
+                GoodDrive AI Assistant
+            </h3>
+
+            <div id="chat-box"
+                class="h-48 overflow-y-auto text-sm mb-3 text-gray-300 space-y-2">
+            </div>
+
+            <input type="text"
+                id="user-input"
+                placeholder="Ask about pricing, location, booking..."
+                class="w-full p-2 rounded bg-[#1a1a1a] text-white border border-gray-700 text-sm">
+
+            <button onclick="sendMessage()"
+                class="mt-2 w-full bg-[#D4AF37] text-black py-2 rounded font-semibold hover:opacity-90">
+                Send
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Chatbot Script -->
+    <script>
+        function toggleChat() {
+            document.getElementById("chat-window").classList.toggle("hidden");
+        }
+
+        function sendMessage() {
+            let input = document.getElementById("user-input").value.toLowerCase();
+            let chatBox = document.getElementById("chat-box");
+
+            if (!input.trim()) return;
+
+            let response = "";
+
+            if (input.includes("price") || input.includes("cost") || input.includes("fee")) {
+                response = "Our driving sessions start at ₹___ per session. Contact us on WhatsApp for full package details.";
+            } 
+            else if (input.includes("location") || input.includes("where")) {
+                response = "We provide personalized driving coaching in Kochi.";
+            } 
+            else if (input.includes("book") || input.includes("schedule")) {
+                response = "You can book instantly by clicking the Book Now button above.";
+            }
+            else if (input.includes("time") || input.includes("hours")) {
+                response = "We offer flexible timings based on your availability.";
+            }
+            else if (input.includes("experience") || input.includes("instructor")) {
+                response = "Our instructor has 5+ years of experience and 200+ trained drivers.";
+            }
+            else {
+                response = "For detailed assistance, please contact us directly on WhatsApp.";
+            }
+
+            chatBox.innerHTML += `<div><strong>You:</strong> ${input}</div>`;
+            chatBox.innerHTML += `<div class="text-[#FF2E88]"><strong>AI:</strong> ${response}</div>`;
+
+            document.getElementById("user-input").value = "";
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
 
 </body>
 </html>
