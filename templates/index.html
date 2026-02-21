@@ -1,184 +1,49 @@
-{% extends "base.html" %}
-{% block content %}
-
-<!-- HERO SECTION -->
-<section class="relative min-h-screen flex items-center overflow-hidden">
-
-    <img src="/static/images/hero.png"
-         alt="Driving Coach"
-         class="absolute inset-0 w-full h-full object-cover">
-
-    <div class="absolute inset-0 bg-gradient-to-r 
-                from-black via-black/80 to-black/30">
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-8">
-        <div class="max-w-2xl">
-
-            <h1 class="text-5xl md:text-6xl font-bold leading-tight">
-                Drive Without Fear.
-                <br>
-                <span class="text-[#FF2E88]">
-                    Build Real Road Confidence.
-                </span>
-            </h1>
-
-            <p class="mt-6 text-lg text-gray-300">
-                Personalized driving coaching in Kochi for confidence and safety.
-            </p>
-
-            <div class="mt-8 flex flex-wrap gap-4">
-
-                <a href="https://wa.me/919947444475?text=Hi%20I%20want%20to%20book%20a%20driving%20session"
-                   target="_blank"
-                   class="bg-[#D4AF37] text-black px-8 py-3 rounded-full font-semibold hover:opacity-90 transition duration-300 shadow-lg">
-                    Book a Session
-                </a>
-
-                <a href="https://wa.me/919947444475"
-                   target="_blank"
-                   class="border border-[#FF2E88] text-[#FF2E88] px-8 py-3 rounded-full font-semibold hover:bg-[#FF2E88] hover:text-white transition duration-300">
-                    WhatsApp Now
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-
-</section>
-
-<!-- TRUST STRIP -->
-<section class="bg-black border-t border-[#D4AF37]/20 py-8">
-    <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
-        <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                <span class="counter" data-target="62">0</span>+
-            </h3>
-            <p class="text-gray-400 mt-2">Google Reviews</p>
-        </div>
-
-        <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                <span class="counter" data-target="200">0</span>+
-            </h3>
-            <p class="text-gray-400 mt-2">Drivers Trained</p>
-        </div>
-
-        <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                <span class="counter" data-target="5">0</span>+
-            </h3>
-            <p class="text-gray-400 mt-2">Years Experience</p>
-        </div>
-
-        <div>
-            <h3 class="text-2xl md:text-3xl font-bold text-[#D4AF37]">
-                <span class="counter" data-target="100">0</span>%
-            </h3>
-            <p class="text-gray-400 mt-2">First Attempt Success</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- REVIEWS SECTION -->
-<section class="bg-[#0B0B0F] py-20 overflow-hidden">
-
-    <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold">
-            What <span class="text-[#FF2E88]">Our Students Say</span>
+<!-- CHATBOT SECTION -->
+<section class="bg-black py-16 border-t border-[#D4AF37]/20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">
+            Ask <span class="text-[#FF2E88]">GoodDrive AI</span>
         </h2>
-        <p class="text-gray-400 mt-3">Real Google Reviews</p>
-    </div>
 
-    <div class="relative overflow-hidden">
+        <div class="bg-[#111] p-6 rounded-xl shadow-lg">
+            <div id="chat-box" class="text-left h-64 overflow-y-auto mb-4 text-gray-300"></div>
 
-        <div class="flex gap-6 animate-scroll">
+            <input type="text"
+                   id="user-input"
+                   placeholder="Ask about driving lessons..."
+                   class="w-full p-3 rounded-lg bg-[#1a1a1a] text-white border border-gray-700">
 
-            <!-- Review 1 -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>I had lost confidence after years of not driving. Yaseen sir’s calm training rebuilt my confidence step by step.</p>
-                <span>— Tabassum Unnisa</span>
-            </div>
-
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>Learning with Yaseen was a fantastic experience. His patience and clarity built real road confidence.</p>
-                <span>— Renju Raghav</span>
-            </div>
-
-            <!-- Review 3 -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>Perfect balance of theory and practice. My daughter is now confident to drive independently.</p>
-                <span>— Dr. Asha Vijayan</span>
-            </div>
-
-            <!-- Review 4 -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>Clear instructions and practical techniques. I now drive comfortably even in traffic.</p>
-                <span>— Saranya Sekharan</span>
-            </div>
-
-            <!-- Review 5 -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>From beginner to confident driver. Every session was structured and professional.</p>
-                <span>— Geethu John</span>
-            </div>
-
-            <!-- Review 6 -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>Very supportive and calm instructor. Highly recommended for nervous learners.</p>
-                <span>— Anjali Menon</span>
-            </div>
-
-            <!-- Duplicate for smooth infinite loop -->
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>I had lost confidence after years of not driving. Yaseen sir’s calm training rebuilt my confidence step by step.</p>
-                <span>— Tabassum Unnisa</span>
-            </div>
-
-            <div class="review-card">
-                <div class="text-[#D4AF37] text-lg font-semibold">★★★★★</div>
-                <p>Learning with Yaseen was a fantastic experience. His patience and clarity built real road confidence.</p>
-                <span>— Renju Raghav</span>
-            </div>
-
+            <button onclick="sendMessage()"
+                    class="mt-4 bg-[#D4AF37] text-black px-6 py-2 rounded-full font-semibold">
+                Send
+            </button>
         </div>
-
     </div>
-
 </section>
 
-<!-- COUNTER SCRIPT -->
 <script>
-const counters = document.querySelectorAll('.counter');
+function sendMessage() {
+    let input = document.getElementById("user-input").value.toLowerCase();
+    let chatBox = document.getElementById("chat-box");
 
-counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
-    const speed = target / 100;
+    let response = "";
 
-    const update = () => {
-        if (count < target) {
-            count += speed;
-            counter.innerText = Math.ceil(count);
-            setTimeout(update, 20);
-        } else {
-            counter.innerText = target;
-        }
-    };
+    if (input.includes("price") || input.includes("cost")) {
+        response = "Our driving sessions start at ₹___ per session.";
+    } 
+    else if (input.includes("location")) {
+        response = "We provide coaching in Kochi.";
+    } 
+    else if (input.includes("book")) {
+        response = "Click the Book Session button above to schedule.";
+    } 
+    else {
+        response = "Please contact us on WhatsApp for more details.";
+    }
 
-    update();
-});
+    chatBox.innerHTML += "<p><strong>You:</strong> " + input + "</p>";
+    chatBox.innerHTML += "<p class='text-[#FF2E88]'><strong>AI:</strong> " + response + "</p>";
+
+    document.getElementById("user-input").value = "";
+}
 </script>
-
-{% endblock %}
