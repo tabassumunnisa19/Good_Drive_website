@@ -6,7 +6,7 @@
 
     <img src="/static/images/hero.png"
          alt="Driving Coach"
-         class="absolute inset-0 w-full h-full object-cover object-[80%_center] md:object-center">
+         class="absolute inset-0 w-full h-full object-cover object-[82%_center] md:object-center">
 
     <div class="absolute inset-0 bg-gradient-to-r 
                 from-black via-black/80 to-black/40"></div>
@@ -27,7 +27,6 @@
             </p>
 
             <div class="mt-8 flex flex-wrap gap-4">
-
                 <a href="https://wa.me/919947444475?text=Hi%20I%20want%20to%20book%20a%20driving%20session"
                    target="_blank"
                    class="bg-[#D4AF37] text-black px-8 py-3 rounded-full font-semibold hover:opacity-90 transition duration-300 shadow-lg">
@@ -35,6 +34,141 @@
                 </a>
 
                 <a href="https://wa.me/919947444475"
+                   target="_blank"
+                   class="border border-[#FF2E88] text-[#FF2E88] px-8 py-3 rounded-full font-semibold hover:bg-[#FF2E88] hover:text-white transition duration-300">
+                    WhatsApp Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= ABOUT INSTRUCTOR ================= -->
+<section class="bg-[#0B0B0F] py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-8">
+            About <span class="text-[#FF2E88]">Instructor Yaseen</span>
+        </h2>
+
+        <p class="text-gray-300 mb-6 text-lg">
+            I’m Yaseen, an Automobile Engineer specializing in driving anxiety 
+            and hypnotic driving training.
+        </p>
+
+        <p class="text-gray-300 mb-6">
+            Good Drive is a personalized driving training service in Ernakulam,
+            offering one-on-one instruction with a calm, confidence-building approach.
+        </p>
+
+        <p class="text-gray-300 mb-6">
+            My hypnotic driving technique helps overcome fear, anxiety,
+            and stress behind the wheel — often reducing driving fear in as little as one hour.
+        </p>
+
+        <p class="text-gray-300">
+            ✔ Flexible timings: 7 AM – 6 PM <br>
+            ✔ Home pickup & drop facility <br>
+            ✔ One-on-one personalized sessions <br>
+            ✔ Real traffic confidence training
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ================= TRUST STATS (ANIMATED COUNTERS) ================= -->
+<section class="bg-black border-t border-[#D4AF37]/20 py-16">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+        <div>
+            <h3 class="text-3xl font-bold text-[#D4AF37] counter" data-target="62">0</h3>
+            <p class="text-gray-400 mt-2">Google Reviews</p>
+        </div>
+
+        <div>
+            <h3 class="text-3xl font-bold text-[#D4AF37] counter" data-target="200">0</h3>
+            <p class="text-gray-400 mt-2">Drivers Trained</p>
+        </div>
+
+        <div>
+            <h3 class="text-3xl font-bold text-[#D4AF37] counter" data-target="5">0</h3>
+            <p class="text-gray-400 mt-2">Years Experience</p>
+        </div>
+
+        <div>
+            <h3 class="text-3xl font-bold text-[#D4AF37] counter" data-target="100">0</h3>
+            <p class="text-gray-400 mt-2">Success Rate (%)</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= MOVING REVIEWS ================= -->
+<section class="bg-[#0B0B0F] py-20 overflow-hidden">
+
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold">
+            What <span class="text-[#FF2E88]">Our Students Say</span>
+        </h2>
+    </div>
+
+    <div class="overflow-hidden whitespace-nowrap">
+        <div class="inline-block animate-marquee space-x-12 text-gray-300 text-lg">
+
+            <span>★★★★★ Calm training rebuilt my confidence. — Tabassum</span>
+            <span>★★★★★ Hypnotic method reduced anxiety fast. — Renju</span>
+            <span>★★★★★ Very patient and professional. — Saranya</span>
+            <span>★★★★★ Structured sessions and home pickup facility. — Geethu</span>
+            <span>★★★★★ I overcame fear in few sessions. — Anjali</span>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= COUNTER SCRIPT ================= -->
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const speed = target / 100;
+
+    const update = () => {
+        if (count < target) {
+            count += speed;
+            counter.innerText = Math.ceil(count);
+            setTimeout(update, 20);
+        } else {
+            counter.innerText = target + (target === 100 ? "%" : "+");
+        }
+    };
+
+    update();
+});
+</script>
+
+
+<!-- ================= MARQUEE ANIMATION ================= -->
+<style>
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+</style>
+
+{% endblock %}                <a href="https://wa.me/919947444475"
                    target="_blank"
                    class="border border-[#FF2E88] text-[#FF2E88] px-8 py-3 rounded-full font-semibold hover:bg-[#FF2E88] hover:text-white transition duration-300">
                     WhatsApp Now
