@@ -75,7 +75,9 @@ html {
   border-radius: 10px;
 }
 
-
+.reviews-wrapper{
+overflow:hidden;
+}
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -112,6 +114,24 @@ html {
 
 .delay-200 { animation-delay: 0.2s; }
 .delay-400 { animation-delay: 0.4s; }
+
+/* ============================= */
+/* Mobile Optimisation           */
+/* ============================= */
+
+@media (max-width:768px){
+
+.review-card{
+  flex:0 0 200px;
+  max-width:200px;
+  padding:14px;
+}
+
+.animate-scroll{
+  animation: scroll 25s linear infinite;
+}
+
+}
 
 
 
